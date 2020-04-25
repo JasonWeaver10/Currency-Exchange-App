@@ -11,3 +11,88 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+header {
+  background-color: orange;
+}
+
+#navheading {
+  margin: 0 auto;
+  width: 50%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  align-content: center;
+}
+
+.navlinks {
+  margin-left: 5%;
+}
+
+#tablediv {
+  border-radius: 20px;
+  background-color: grey;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.tableheading {
+  color: white;
+}
+
+#tableinfo {
+  width: 60%;
+  margin: 0 auto;
+}
+
+table, th, td {
+  border: 1px solid white;
+}
+
+#curtable, #ctable {
+  width: 60%;
+  margin: 0 auto;
+}
+
+#converterdiv {
+  background-color: grey;
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 1%;
+  padding-top: 1%;
+  border-radius: 20px;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+#curexchange {
+  margin-top: 5%;
+}
+
+.cconverter {
+  margin-right: 5%;
+}
+
+#exchange {
+  margin: 0 auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+footer {
+  background-color: orange;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.footerLinks {
+  color: black;
+}
+
+.socialIcons {
+  margin-left: 5%;
+  margin-right: 5%;
+}

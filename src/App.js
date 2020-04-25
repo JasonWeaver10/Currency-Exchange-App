@@ -2,24 +2,22 @@ import React from 'react';
 import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
+import CurrencyTable from './CurrencyTable';
+import CurrencyConverter from './CurrencyConverter';
+import Footer from './Footer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <hr></hr>
+      <div>
+        <p>Welcome! This app was designed with React as a project </p>
+      </div>
+        <CurrencyTable/>
+      <hr></hr>
+        <CurrencyConverter/> 
+      <hr></hr>
+        <Footer/>
     </div>
   );
 }
