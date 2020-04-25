@@ -17,13 +17,13 @@ class Footer extends React.Component {
     return (
       <div className="footer">
        <a href="https://linkedin.com" target="_blank">
-         <FontAwesomeIcon icon={['fab', 'linkedin']} size="3x"/>
+         <FontAwesomeIcon icon={['fab', 'linkedin']} size="3x" className="footerLinks"/>
        </a>
-       <a href="https://github.com/jasonweaver10" target="_blank" className="footerLinks">
-         <FontAwesomeIcon icon={['fab', 'github']} className="socialIcons" size="3x"/>     
+       <a href="https://github.com/jasonweaver10" target="_blank">
+         <FontAwesomeIcon icon={['fab', 'github']} className="socialIcons footerLinks" size="3x"/>     
        </a>
-       <a href="https://jweaver.dev" target="_blank" className="footerLinks">
-         <FontAwesomeIcon icon={'user'} size="3x"/>     
+       <a href="https://jweaver.dev" target="_blank">
+         <FontAwesomeIcon icon={'user'} size="3x" className="footerLinks"/>     
        </a>
      </div>
     );

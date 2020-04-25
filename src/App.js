@@ -5,19 +5,18 @@ import './App.css';
 import CurrencyTable from './CurrencyTable';
 import CurrencyConverter from './CurrencyConverter';
 import Footer from './Footer';
+import Header from './Header';
 
 function App() {
   return (
     <div className="App">
-      <hr></hr>
+      <Header/>
       <div>
         <p>Welcome! This app was designed with React as a project </p>
       </div>
-        <CurrencyTable/>
-      <hr></hr>
-        <CurrencyConverter/> 
-      <hr></hr>
-        <Footer/>
+      <CurrencyTable/>
+      <CurrencyConverter/> 
+      <Footer/>
     </div>
   );
 }
