@@ -79,6 +79,20 @@ table, th, td {
   margin: 0 auto;
 }
 
+.darkDiv {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.dropDown {
+  width: 10%;
+  color: black;
+}
+
+.option {
+  
+}
+
 #converterdiv {
   background-color: grey;
   width: 80%;

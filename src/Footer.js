@@ -16,13 +16,13 @@ class Footer extends React.Component {
   render() {
     return (
       <div className="footer">
-       <a href="https://linkedin.com" target="_blank">
+       <a href="https://linkedin.com">
          <FontAwesomeIcon icon={['fab', 'linkedin']} size="3x" className="footerLinks"/>
        </a>
-       <a href="https://github.com/jasonweaver10" target="_blank">
+       <a href="https://github.com/jasonweaver10">
          <FontAwesomeIcon icon={['fab', 'github']} className="socialIcons footerLinks" size="3x"/>     
        </a>
-       <a href="https://jweaver.dev" target="_blank">
+       <a href="https://jweaver.dev">
          <FontAwesomeIcon icon={'user'} size="3x" className="footerLinks"/>     
        </a>
      </div>
