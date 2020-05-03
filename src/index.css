@@ -5,7 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rbg(186,202.227);
+  background-image: url(./jason-leung-SAYzxuS1O3M-unsplash.jpg);
+  background-size: 100%;
 }
 
 code {
@@ -47,6 +48,17 @@ code {
 hr {
   margin-top: 3%;
   margin-bottom: 3%;
+  background-color: white;
+}
+
+.welcome {
+  margin: 0 auto;
+  margin-bottom: 0;
+  z-index: 0;
+}
+
+.heroImage {
+  width: 100%
 }
 
 #tablediv {
@@ -65,11 +77,6 @@ hr {
   font-weight: 800;
 }
 
-#tableinfo {
-  width: 80%;
-  margin: 0 auto;
-}
-
 table, th, td {
   border: 1px solid white;
 }
@@ -84,41 +91,33 @@ table, th, td {
   margin: 0 auto;
 }
 
-.dropDown {
-  width: 10%;
-  color: black;
-}
-
-.option {
-  
-}
-
-#converterdiv {
+#converterOuterDiv {
   background-color: grey;
   width: 80%;
   margin: 0 auto;
   padding-bottom: 1%;
   padding-top: 1%;
   border-radius: 20px;
-  margin-bottom: 5%;
-  margin-top: 5%;
+  margin-bottom: 10%;
+  margin-top: 10%;
+}
+
+.converterInnerDiv {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 3%;
+  padding-bottom: 3%;
 }
 
 #curexchange {
   margin-top: 5%;
+  padding-top: 3%;
   color: white;
   font-weight: 800;
 }
 
 .cconverter {
   margin-right: 5%;
-}
-
-#exchange {
-  margin: 0 auto;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  border-radius: 10px;
 }
 
 .footerLinks {

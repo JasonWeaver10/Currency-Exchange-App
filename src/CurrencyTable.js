@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import SelectCountry from './SelectCountry';
+import React from 'react';
 
 const countryList = [
     "GBP", "CAD", "USD", "AUD", "BGN", "BRL", "CHF", "CNY", "CZK", "DKK", "EUR", "HKD", "HRK", "HUF", "IDR", "ILS", "INR", "ISK", "JPY", "KRW", "MXN", "MYR", "NOK", "NZD", "PHP", "PLN", "RON", "RUB", "SEK", "SGD", "THB", "TRY", "ZAR"
@@ -16,7 +15,6 @@ class CurrencyTable extends React.Component {
             base: "USD",
         };
     this.handleBaseChange = this.handleBaseChange.bind(this);
-    // this.tableCreator = this.tableCreator.bind(this);
     }
 
     
@@ -36,7 +34,6 @@ class CurrencyTable extends React.Component {
                     base: data.base,
                 })
             console.log('json data', data);
-            this.tableCreator();
             }).catch((error) => {
             console.log(error);
         })
@@ -49,18 +46,7 @@ class CurrencyTable extends React.Component {
         this.fetchRequest(base);
     }
 
-    // selectCreator = () => {
-    //     const selectCountry = countryList.map((country) => 
-    //     <select>
-    //         <option className="option" label={country} value={country}></option>
-    //     </select>)
-    //     return selectCountry;
-    // }
-
-    // tableCreator = () => {
-    //     // const countryTable = countryList.map(country)
-                
-    // }
+    
 
     componentDidMount () {
         this.fetchRequest(this.state.base);
@@ -86,7 +72,7 @@ class CurrencyTable extends React.Component {
                     <th>Value:</th>
                   </tr>
                       {countryList.map((country) => 
-                      <tr>
+                      <tr key={country}>
                       <td>{country} </td>
                       <td>{this.state.rates[country]}</td>
                       </tr>
