@@ -11,9 +11,12 @@ import myImage from './jason-leung-SAYzxuS1O3M-unsplash.jpg'
 const Home = () => {
   return (
       <div>
-        <h1 className="table-dark welcome">Welcome!</h1>
-        <p className="table-dark welcome">This app was designed with React for an online class. It also makes use of FontAwesome, Bootstrap, React Router, and Unsplash </p>
-        <img className="heroImage"src={myImage} alt="currency" />
+        <div className="welcomeOuter">
+          <div className="welcomeInner table-dark"> 
+            <h1 className="table-dark">Welcome!</h1>
+            <p className="table-dark welcomeText">This app was designed with React for an online class. It also makes use of FontAwesome, Bootstrap, React Router, and a photo from Unsplash. </p>
+          </div>
+        </div>
       </div>
   )
 }
