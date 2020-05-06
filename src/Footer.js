@@ -21,6 +21,11 @@ class Footer extends React.Component {
        <a href="https://jweaver.dev">
          <FontAwesomeIcon icon={'user'} size="3x" className="footerLinks"/>     
        </a>
+       <p className="disclaimer">
+         Photo by Jason Leung on Unsplash. 
+         <br/>
+         All other content is property of Jason Weaver unless otherwise specified.
+       </p>
      </div>
     );
   }

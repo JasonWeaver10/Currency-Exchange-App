@@ -8,27 +8,27 @@ class CurrencyConverter extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            value1: 1,
-            value2: 1,
+            baseValue: 1,
+            otherValue: 1,
             rates: [],
-            choice1: 'GBP',
-            choice2: 'GBP',
-            math1: 1,
-            math2: 1,
+            base: 'GBP',
+            other: 'GBP',
+            baseMath: 1,
+            otherMath: 1,
         }
-        this.handleNumChange1 = this.handleNumChange1.bind(this);
-        this.handleNumChange2 = this.handleNumChange2.bind(this);
-        this.handleChange1 = this.handleChange1.bind(this);
-        this.handleChange2 = this.handleChange2.bind(this);
+        this.handleNumChangeBase = this.handleNumChangeBase.bind(this);
+        this.handleNumChangeOther = this.handleNumChangeOther.bind(this);
+        this.handleChangeBase = this.handleChangeBase.bind(this);
+        this.handleChangeOther = this.handleChangeOther.bind(this);
         this.fetchRequest = this.fetchRequest.bind(this);
-        this.handleMath1 = this.handleMath1.bind(this);
-        this.handleMath2 = this.handleMath2.bind(this);
+        this.handleMathBase = this.handleMathBase.bind(this);
+        this.handleMathOther = this.handleMathOther.bind(this);
 
     }
     
 
     fetchRequest = () => {
-        fetch('https://api.exchangeratesapi.io/latest?base='+ (this.state.choice1)).then((response) => {
+        fetch('https://api.exchangeratesapi.io/latest?base='+ (this.state.base)).then((response) => {
     
          if (response.ok) {
           return response.json();
@@ -39,38 +39,41 @@ class CurrencyConverter extends React.Component {
                     rates: data.rates,
                 })
             console.log('json data', data);
-            console.log((this.state.choice1),(this.state.choice2));
-            this.setState({math1: this.state.rates[this.state.choice1]});
-            this.setState({math2: this.state.rates[this.state.choice2]});
-            console.log((this.state.math1),(this.state.math2));
-            }).catch((error) => {
+            console.log((this.state.base),(this.state.other));
+            this.setState({baseMath: this.state.rates[this.state.base]}, this.handleMathBase);
+            this.setState({otherMath: this.state.rates[this.state.other]}, this.handleMathOther);
+        }).catch((error) => {
             console.log(error);
         })
     }
 
-    handleChange1 = (e) => {
-        this.setState({choice1: e.target.value},this.fetchRequest(e.target.value));     
+    handleChangeBase = (e) => {
+        this.setState({base: e.target.value},this.fetchRequest,this.handleMathBase);     
     }
 
-    handleChange2 = (e) => {
-        this.setState({choice2: e.target.value},this.fetchRequest(e.target.value));     
+    handleChangeOther = (e) => {
+        this.setState({other: e.target.value},this.fetchRequest,this.setState({otherMath: this.state.rates[this.state.other]}),this.handleMathOther);     
     }
 
-    handleNumChange1 = (e) => {
-        this.setState({value1: e.target.value}, this.handleMath1(this.state.value1));  
+    handleNumChangeBase = (e) => {
+        this.setState({baseValue: e.target.value},this.handleMathBase);  
     }
 
-    handleNumChange2 = (e) => {
-        this.setState({value2: e.target.value}, this.handleMath2(this.state.value2));  
+    handleNumChangeOther = (e) => {
+        this.setState({otherValue: e.target.value}, this.handleMathOther);  
     }
 
-    handleMath1 = () => {
-        const calc1 = ((this.state.math1) * (this.state.value1));
-        // this.setState({value2: (calc2)});
+    handleMathBase = () => {
+        console.log(this.state.otherMath);
+        const calc1 = ((this.state.baseValue) * (this.state.otherMath));
+        this.setState({otherValue: calc1});
+        console.log(calc1 + "calc-1");
     }
 
-    handleMath2 = () => {
-        //  const calc2 = this.state.
+    handleMathOther = () => {
+        const calc2 = ((this.state.otherValue) / (this.state.otherMath));
+        this.setState({baseValue: calc2});
+        console.log(calc2 + "calc-2");
 
     }
 
@@ -80,16 +83,16 @@ class CurrencyConverter extends React.Component {
             <div className="table-dark converterInnerDiv">
               <h1 id="curexchange">Currency Converter</h1>
               <hr></hr>
-              <select onChange={this.handleChange1}>
+              <select className="phoneView" onChange={this.handleChangeBase}>
                 {countryList.map((country) => <option key={country} label={country} value={country}></option>)}
               </select>
            
-              <input onChange={this.handleNumChange1} className="d-inline cconverter" type="number" placeholder="Value" label="Value" value={this.state.value1}></input>
-              <p className="d-inline cconverter">Converts To</p>
-              <select onChange = {this.handleChange2}>
+              <input onChange={this.handleNumChangeBase} className="phoneView" type="number" placeholder="Base Value" label="Value" value={this.state.baseValue}></input>
+              <p className="phoneView cconverter">Converts To</p>
+              <select className="phoneView" onChange = {this.handleChangeOther}>
                 {countryList.map((country) => <option key={country} label={country} value={country}></option>)}
               </select>
-              <input onChange={this.handleNumChange2} className="d-inline" type="number" placeholder="Value" label="Value" value={this.state.value2}></input>
+              <input onChange={this.handleNumChangeOther} className="phoneView" type="number" placeholder="Exchange Value" label="Value" value={this.state.otherValue}></input>
             </div>
           </div>
         );  

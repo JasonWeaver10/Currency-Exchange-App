@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Link } from "react-router-dom";
-import CurrencyTable from './CurrencyTable';
 
 
 class Header extends React.Component {

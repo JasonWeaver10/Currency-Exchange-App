@@ -13,7 +13,7 @@ const Home = () => {
       <div>
         <h1 className="table-dark welcome">Welcome!</h1>
         <p className="table-dark welcome">This app was designed with React for an online class. It also makes use of FontAwesome, Bootstrap, React Router, and Unsplash </p>
-        <img className="heroImage"src={myImage}/>
+        <img className="heroImage"src={myImage} alt="currency" />
       </div>
   )
 }
@@ -40,7 +40,8 @@ function App() {
       <div className="App">
         <Header/>
         <div>
-          <Route path="/Home/" component={Home} />
+          <Route path='/' exact component={Home}/>
+          <Route path='/Home/' component={Home} />
           <Route path='/Table/' component={Table} />
           <Route path='/Converter/' component={Converter} />
         </div>
