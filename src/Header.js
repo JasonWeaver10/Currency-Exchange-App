@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 class Header extends React.Component {
@@ -11,7 +11,8 @@ class Header extends React.Component {
                 <h1 className="headerText">Captivating Currency Converter</h1>
                 <Link to="/Home/" className="navlink navlinks">Home</Link>
                 <Link to="/Table/" className="navlink navlinks">Currency Table</Link>
-                <Link to="/Converter/" className="navlinks">Currency Converter</Link>
+                <Link to="/Converter/" className="navlink navlinks">Currency Converter</Link>
+                <Link to="/HistoryChart/" className="navlinks">History Chart</Link>
             </div>
         )
     }

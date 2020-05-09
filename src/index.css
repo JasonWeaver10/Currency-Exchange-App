@@ -23,8 +23,11 @@ code {
 
 @media only screen and (min-width: 1001px) {
   .phoneView {
-    display: inline-block
+    display: inline-block;
+    padding-right: 1%;
+    padding-left: 1%;
   }
+
   .cconverter {
     margin-left: 3%;
     margin-right: 3%;
@@ -88,9 +91,21 @@ hr {
   /* z-index: 0; */
 }
 
+#welcomeHeader {
+  font-weight: 800;
+  padding-top: 3%;
+
+}
+
 .welcomeText {
   margin-right: 3%;
   margin-left: 3%;
+  padding-bottom: 3%;
+}
+
+#ctable {
+  font-weight: 800;
+  padding-top: 3%;
 }
 
 #tablediv {
@@ -136,7 +151,7 @@ table, th, td {
   padding-bottom: 3%;
 }
 
-input {
+.selectGap {
   margin-left: 1%;
 }
 
@@ -145,6 +160,13 @@ input {
   padding-top: 3%;
   color: white;
   font-weight: 800;
+}
+
+#chartheading {
+  color: white;
+  font-weight: 800;
+  margin-top: 5%;
+  padding-top: 3%;
 }
 
 .footerLinks {

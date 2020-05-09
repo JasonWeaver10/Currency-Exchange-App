@@ -4,16 +4,16 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import CurrencyTable from './CurrencyTable';
 import CurrencyConverter from './CurrencyConverter';
+import HChart from './HChart'
 import Footer from './Footer';
 import Header from './Header';
-import myImage from './jason-leung-SAYzxuS1O3M-unsplash.jpg'
 
 const Home = () => {
   return (
       <div>
         <div className="welcomeOuter">
           <div className="welcomeInner table-dark"> 
-            <h1 className="table-dark">Welcome!</h1>
+            <h1 id="welcomeHeader" className="table-dark">Welcome!</h1>
             <p className="table-dark welcomeText">This app was designed with React for an online class. It also makes use of FontAwesome, Bootstrap, React Router, and a photo from Unsplash. </p>
           </div>
         </div>
@@ -37,6 +37,14 @@ const Converter = () => {
   )
 }
 
+const HistoryChart = () => {
+  return (
+    <div>
+      <HChart/>
+    </div>
+  )
+}
+
 function App() {
   return (
     <Router>
@@ -47,6 +55,7 @@ function App() {
           <Route path='/Home/' component={Home} />
           <Route path='/Table/' component={Table} />
           <Route path='/Converter/' component={Converter} />
+          <Route path='/HistoryChart/' component={HistoryChart} />
         </div>
         <Footer/>
       </div>

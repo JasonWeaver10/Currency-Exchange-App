@@ -38,8 +38,6 @@ class CurrencyConverter extends React.Component {
                 this.setState({ 
                     rates: data.rates,
                 })
-            console.log('json data', data);
-            console.log((this.state.base),(this.state.other));
             this.setState({baseMath: this.state.rates[this.state.base]}, this.handleMathBase);
             this.setState({otherMath: this.state.rates[this.state.other]}, this.handleMathOther);
         }).catch((error) => {
@@ -67,13 +65,11 @@ class CurrencyConverter extends React.Component {
         console.log(this.state.otherMath);
         const calc1 = ((this.state.baseValue) * (this.state.otherMath));
         this.setState({otherValue: calc1});
-        console.log(calc1 + "calc-1");
     }
 
     handleMathOther = () => {
         const calc2 = ((this.state.otherValue) / (this.state.otherMath));
         this.setState({baseValue: calc2});
-        console.log(calc2 + "calc-2");
 
     }
 
