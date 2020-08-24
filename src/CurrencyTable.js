@@ -74,7 +74,7 @@ class CurrencyTable extends React.Component {
                       {countryList.map((country) => 
                       <tr key={country}>
                       <td>{country} </td>
-                      <td>{this.state.rates[country]}</td>
+                      <td>{this.state.rates[country].toFixed(2)}</td>
                       </tr>
                       )}
                 </tbody>
