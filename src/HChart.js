@@ -75,7 +75,7 @@ class HChart extends React.Component {
             throw new Error(data.error);
           }
           const chartLabels = Object.keys(data.rates);
-          const chartData = Object.values(data.rates.map(rate => rate[this.state.other]));
+          const chartData = Object.values(data.rates).map(rate => rate[this.state.other]);
           const chartLabel = `${this.state.base}/${this.state.other}`;
           this.buildChart(chartLabels, chartData, chartLabel);
         })
