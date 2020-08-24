@@ -50,7 +50,7 @@ class CurrencyConverter extends React.Component {
     }
 
     handleChangeOther = (e) => {
-        this.setState({other: e.target.value},this.fetchRequest,this.setState({otherMath: this.state.rates[this.state.other].toFixed(2)}),this.handleMathOther);     
+        this.setState({other: e.target.value},this.fetchRequest,this.setState({otherMath: this.state.rates[this.state.other]}),this.handleMathOther);     
     }
 
     handleNumChangeBase = (e) => {
